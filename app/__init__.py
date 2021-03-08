@@ -34,11 +34,11 @@ def create_app(config_name):
     bcrypt.init_app(app)
     # Will add the views and forms
     # # Registering the blueprint
-    # from .main import main as main_blueprint
-    # app.register_blueprint(main_blueprint)
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
     
-    # from .auth import auth as auth_blueprint
-    # app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
     
     # configure UploadSet
