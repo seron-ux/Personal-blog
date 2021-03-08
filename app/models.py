@@ -1,14 +1,14 @@
-from . import db
-from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import UserMixin
-from . import login_manager
-from datetime import datetime
+# from . import db
+# from werkzeug.security import generate_password_hash,check_password_hash
+# from flask_login import UserMixin
+# from . import login_manager
+# from datetime import datetime
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+# @login_manager.user_loader
+# def load_user(user_id):
+#     return User.query.get(int(user_id))
 
-class User(db.Model,UserMixin):
+# class User(db.Model,UserMixin):
     __tablename__ = 'users'
     
     id=db.Column(db.Integer,primary_key=True)
@@ -84,8 +84,7 @@ class Comment(db.Model):
         db.session.delete(self)
         db.session.commit()
     
-    def __repr__(self):
-        return f"User('{self.date_posted}')"
+    def __repr__(self):date_posted}')"
     
 class Quote:
     def __init__ (self,author,quote):
