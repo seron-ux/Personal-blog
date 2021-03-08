@@ -1,5 +1,5 @@
-# vrtual/
-# *.pyc
-# instance/
-# start.sh/
-# *.env
+vrtual/
+*.pyc
+instance/
+start.sh/
+*.env
